@@ -1007,12 +1007,12 @@ public class ReactTextInputManager extends BaseViewManager<ReactEditText, Layout
                   new ReactTextInputSubmitEditingEvent(
                       editText.getId(), editText.getText().toString()));
 
-              if (blurOnSubmit) {
-                editText.clearFocus();
-              }
+              // if (blurOnSubmit) {
+              //   editText.clearFocus();
+              // }
 
               // Prevent default behavior except when we want it to insert a newline.
-              if (blurOnSubmit || !isMultiline) {
+              if (blurOnSubmit  && isMultiline) {
                 return true;
               }
 

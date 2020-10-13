@@ -209,9 +209,7 @@ static void *TextFieldSelectionObservingContext = &TextFieldSelectionObservingCo
 {
   // Custom implementation of `textInputShouldReturn` and `textInputDidReturn` pair for `UITextView`.
   if (!_backedTextInputView.textWasPasted && [text isEqualToString:@"\n"]) {
-    if ([_backedTextInputView.textInputDelegate textInputShouldReturn]) {
-      [_backedTextInputView.textInputDelegate textInputDidReturn];
-      [_backedTextInputView endEditing:NO];
+    if (![_backedTextInputView.textInputDelegate textInputShouldReturn]) {
       return NO;
     }
   }

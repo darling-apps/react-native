@@ -344,7 +344,7 @@ RCT_NOT_IMPLEMENTED(- (instancetype)initWithFrame:(CGRect)frame)
                                       key:nil
                                eventCount:_nativeEventCount];
 
-  return _blurOnSubmit;
+  return NO;
 }
 
 - (void)textInputDidReturn
